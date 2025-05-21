@@ -69,7 +69,7 @@ This spec-determined value would then be available via the `${env:K8S_NODE_NAME}
 All fields are optional.
 
 | Name              | Type | Default | Docs |
-|-------------------|  | ------- | ---- |
+|-------------------|---| ------- | ---- |
 | auth_type         | string | `serviceAccount` | How to authenticate to the K8s API server.  This can be one of `none` (for no auth), `serviceAccount` (to use the standard service account token provided to the agent pod), or `kubeConfig` to use credentials from `~/.kube/config`. |
 | node              | string | <no value> | The node name to limit the discovery of pod, port, and node endpoints. Providing no value (the default) results in discovering endpoints for all available nodes. |
 | observe_pods      | bool | `true` | Whether to report observer pod and port endpoints. If `true` and `node` is specified it will only discover pod and port endpoints whose `spec.nodeName` matches the provided node name. If `true` and `node` isn't specified, it will discover all available pod and port endpoints. Please note that Collector connectivity to pods from other nodes is dependent on your cluster configuration and isn't guaranteed. | 
